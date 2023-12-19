@@ -1,8 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server'
 import userService from '@/services/user.service'
-import { validator } from '@/utils/validator'
 
 export async function GET(request: NextRequest) {
+  const id = `U${Math.floor(1000 + Math.random() * 9000)}`
   const name = request.nextUrl.searchParams.get('name') as string
   const nim = request.nextUrl.searchParams.get('nim') as string
   const alamat = request.nextUrl.searchParams.get('address') as string
@@ -12,6 +12,7 @@ export async function GET(request: NextRequest) {
 
   try {
     const response = await userService.signup({
+      id,
       name,
       alamat,
       email,
