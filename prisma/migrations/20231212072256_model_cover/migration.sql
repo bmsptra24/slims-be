@@ -1,0 +1,5 @@
+-- CreateTable
+CREATE TABLE "Cover" (
+    "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    "coverFile" BLOB NOT NULL
+);
